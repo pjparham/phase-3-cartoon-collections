@@ -15,18 +15,25 @@ def long_planeteer_calls(calls)
   calls.any? {|call| call.length > 4}
 end
 
+# def find_the_cheese(snacks)
+#   cheese_types = ["cheddar", "gouda", "camembert"]
+#   cheese_array = cheese_types.map do |cheese|
+#     if snacks.include?(cheese)
+#       cheese
+#     end
+#   end
+#   if cheese_array.filter {|element| element != nil}.join == ""
+#     nil
+#   else
+#     cheese_array.filter {|element| element != nil}.join
+#   end
+#   # cheese_array.filter {|element| element != nil}.join
+# end
+
 def find_the_cheese(snacks)
   cheese_types = ["cheddar", "gouda", "camembert"]
-  cheese_array = cheese_types.map do |cheese|
-    if snacks.include?(cheese)
-      cheese
-    end
+  snacks.find do |snack|
+    cheese_types.include?(snack)
   end
-  if cheese_array.filter {|element| element != nil}.join == ""
-    nil
-  else
-    cheese_array.filter {|element| element != nil}.join
-  end
-  # cheese_array.filter {|element| element != nil}.join
 end
 
